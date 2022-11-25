@@ -1,0 +1,1 @@
+# Notification config sample
