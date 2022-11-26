@@ -1,13 +1,31 @@
-# Everything related to `neovim`
+# `Neovim`
 
-- Installation
+- Installation build base
+
+    `build-base` is the `build-essential` simular package in another Linux distro.
+
+    You will see the following errors if you don't install it when using `treesitter`:
 
     ```bash
-    sudo pacman --sync --refresh neovim python-pynvim
+    cannot find -lstdc++: No such file or directory
 
-    mkdir ~/.config/nvim
-    touch ~/.config/nvim/init.vim
+    cc1p no such file or directory and -lstdc++ cannot find
     ```
 
-</br>
+    </br>
+
+    ```bash
+    doas apk --no-cache add build-base
+    ```
+
+    </br>
+
+
+- Install `Neovim`
+
+    ```bash
+    doas apk --no-cache add neovim neovim-doc py3-pynvim
+    ```
+
+    </br>
 
