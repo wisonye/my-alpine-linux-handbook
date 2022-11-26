@@ -13,6 +13,8 @@
     - [Change default shell](./change-default-shell.md)
     - [Config `git`](./config-git.md)
     - [Recommended package to install](./recommended-package-to-install.md)
+    - [OpenRC services](./control_services.md)
+    - [Open SSH](./open_ssh.md)
 - [Alpine configuration guide]()
     - [Setup-script](./setup-script.md)
     - [WIFI Configuration](./wifi-configuration.md)
