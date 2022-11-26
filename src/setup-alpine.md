@@ -15,7 +15,7 @@ type `setup-alpine` to start the setup process.
 
 - Mirror
 
-    For New Zealand mirror, that's the `mirror.2degrees.nz` choice. Type **`65`**.
+    For New Zealand mirror, that's the `mirror.2degrees.nz` choice. Type **`62`**.
 
     [Here](https://mirrors.alpinelinux.org/) is the mirror list you can have a look for you country.
 

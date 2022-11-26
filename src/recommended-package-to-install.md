@@ -5,7 +5,7 @@ All the packages below are optional but recommended which can make your life a b
 - Useful utils
 
     ```bash
-    doas apk --no-cache add ripgrep bat openssh bash neofetch util-linux
+    doas apk --no-cache add ripgrep bat openssh bash neofetch util-linux lf
     ```
 
     `util-linux` package provides somthing like `lscpu, lsblk`, etc
@@ -16,6 +16,20 @@ All the packages below are optional but recommended which can make your life a b
     ```bash
     doas apk --no-cache add ripgrep bat openssh
     ```
+
+    </br>
+
+    If you use `bat` to print content, it can't display correctly!!!
+
+    ```bash
+    doas vi /etc/rc.conf
+
+    # Change unicode value to `YES`
+    unicode="YES"
+    ```
+
+    Reboot to take effect.
+
     </br>
 
 - `procs` is a replacement for `ps` written in `Rust`.
