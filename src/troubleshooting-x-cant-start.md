@@ -5,7 +5,7 @@
 The first thing first, print the `dmesg` for all error cases:
 
 ```bash
-doas dmesg -ctime | rg -e fail -e error -e Fail -e Error
+doas dmesg --ctime | rg -e fail -e error -e Fail -e Error
 ```
 
 </br>
@@ -14,8 +14,8 @@ Or you if you're focusing on the GPU driver issue, then do this:
 
 
 ```bash
-doas dmesg -ctime | rg amd
-doas dmesg -ctime | rg intel
+doas dmesg --ctime | rg amd
+doas dmesg --ctime | rg intel
 ```
 
 </br>
