@@ -10,46 +10,8 @@ any supported icons below:
 
 ### Installation
 
-It has 7 optional ways to install **`Nerd Fonts`**. But for `Arch`, you can 
-install via `AUR`. Let's take the `Source Code Pro` at an example:
-
 ```bash
-paru -S nerd-fonts-source-code-pro
-```
-
-After installing, you can run the command below to show the installed location:
-
-```bash
-paru --query --list nerd-fonts-source-code-pro
-
-# /usr/share/fonts/TTF/Sauce Code Pro Black Italic Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Black Italic Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Black Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Black Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Italic Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Italic Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Italic Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Italic Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Italic Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Italic Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Light Italic Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Light Italic Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Light Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Light Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Italic Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Italic Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Italic Nerd Font Complete.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Nerd Font Complete.ttf
+doas apk --no-cache add font-source-code-pro-nerd
 ```
 
 </br>
@@ -63,34 +25,34 @@ any application's font configuration file:
 ```bash
 fc-list | grep Pro
 
-# /usr/share/fonts/TTF/Sauce Code Pro Light Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Light Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Black Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Black Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Semibold,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Bold
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Semibold Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Light Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Light,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Bold
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Medium Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Medium,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=ExtraLight Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Bold Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Medium Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Light Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Light,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Bold Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Bold Italic
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=ExtraLight,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Black Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Black,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Black Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Black Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=ExtraLight,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Medium Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Medium,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Black Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Black,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Semibold Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro ExtraLight Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=ExtraLight Italic,Italic
-# /usr/share/fonts/TTF/Sauce Code Pro Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Semibold Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Semibold,Regular
-# /usr/share/fonts/TTF/Sauce Code Pro Light Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Light Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Bold Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Bold Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Light Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Light,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Black Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Black Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro ExtraLight Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=ExtraLight,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Light Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Light Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro ExtraLight Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=ExtraLight Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Medium Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Medium,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Medium Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Medium Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Light Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Light Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Light Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Light,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Semibold Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro ExtraLight Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=ExtraLight Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Bold Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Bold Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Black Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Black,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Semibold Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Semibold Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Medium Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Medium,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Black Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Black,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Semibold Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Semibold,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Semibold,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Medium Italic Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Medium Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro ExtraLight Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=ExtraLight,Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Bold Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Bold
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Black Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Black Italic,Italic
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Bold Nerd Font Complete Mono.ttf: SauceCodePro Nerd Font Mono:style=Bold
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Regular
+# /usr/share/fonts/source-code-pro-nerd/Sauce Code Pro Italic Nerd Font Complete.ttf: SauceCodePro Nerd Font:style=Italic
 ```
 
 Right now, you should notice that the font name is either **`SauceCodePro Nerd Font Mono`** or
