@@ -29,6 +29,7 @@
     - [CLI File Browser](./cli-file-browser.md)
     - [Install `GTK` themes](./install-gtk-themes.md)
     - [Install browser]()
+        - [Install `Brave Browser`](./install-brave.md)
         - [Install `Chrome`](./install-google-chrome.md)
         - [`vim` plugins](./chrome-vim-plugins.md)
         - [Install `ungoogled-chromium`](./install-ungoogled-chromium.md)
