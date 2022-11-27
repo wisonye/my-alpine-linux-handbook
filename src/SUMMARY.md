@@ -22,6 +22,7 @@
     - [Setup-script](./setup-script.md)
     - [Install `X` implementation](./install-x-implementation.md)
     - [Install `bspwm`](./install_bspwm.md)
+    - [Fix X Fullscreen](./fix-x-fullscreen-issue.md)
     - [Install `NerdFont`](./install-nerd-font.md)
     - [Troubleshooting of X can't start](./troubleshooting-x-cant-start.md)
     - [Fix resolution issue](./fix-resolution-issue.md)
