@@ -20,7 +20,6 @@
     - [Rust](./rust.md)
 - [X configuration]()
     - [Setup-script](./setup-script.md)
-    - [WIFI Configuration](./wifi-configuration.md)
     - [Install or update kernel](./install-or-update-kernel.md)
     - [Install `X` implementation](./install-x-implementation.md)
     - [Install `bspwm`](./install_bspwm.md)
