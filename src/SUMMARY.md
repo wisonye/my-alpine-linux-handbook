@@ -18,6 +18,7 @@
     - [Neovim](./neovim.md)
     - [NodeJS](./nodejs.md)
     - [Rust](./rust.md)
+    - [OpenSSL Dev](./openssl-dev.md)
 - [X configuration]()
     - [Setup-script](./setup-script.md)
     - [Install `X` implementation](./install-x-implementation.md)
