@@ -27,6 +27,7 @@
     - [Troubleshooting of X can't start](./troubleshooting-x-cant-start.md)
     - [Fix resolution issue](./fix-resolution-issue.md)
     - [CLI File Browser](./cli-file-browser.md)
+    - [Image Previewr](./image-previewer.md)
     - [Install `GTK` themes](./install-gtk-themes.md)
     - [Install browser]()
         - [Install `Brave Browser`](./install-brave.md)
