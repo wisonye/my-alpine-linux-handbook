@@ -89,24 +89,3 @@ then you can paste to anywhere to have that icon.
 
 </br>
 
-### `Vim` support
-
-Add the settings below to your `vimrc` or `init.vim` (for **`neovim`**):
-
-```bash
-# 
-Plug 'ryanoasis/vim-devicons'
-
-# Set the `guifont` to your patched font name with the size
-set guifont=SauceCodePro\ Nerd\ Font\ 11
-
-# Enable this line if you use `vim-airline`
-let g:airline_powerline_fonts = 1
-```
-
-Then run `:PlugInstall` and restart **`vim`** to take effect.
-
-</br>
-
-
-

@@ -60,9 +60,9 @@
 
 Pay attention:
 
-    Before installing any `DE` or `WM`, you better to ssh to finish the rest
-    configuration instead of typing in the ugly TTY console.
+Before installing any `DE` or `WM`, you better to ssh to finish the rest
+configuration instead of typing in the ugly TTY console.
 
-    </br>
+</br>
 
 

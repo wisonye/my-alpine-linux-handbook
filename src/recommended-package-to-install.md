@@ -9,17 +9,11 @@ All the packages below are optional but recommended which can make your life a b
     ```
 
     `util-linux` package provides somthing like `lscpu, lsblk`, etc
-    </br>
-
-- Neovim
-
-    ```bash
-    doas apk --no-cache add ripgrep bat openssh
-    ```
 
     </br>
 
-    If you use `bat` to print content, it can't display correctly!!!
+    If you use `bat` to print content, it can't display correctly, then try this
+    to fix that:
 
     ```bash
     doas vi /etc/rc.conf
@@ -38,7 +32,7 @@ All the packages below are optional but recommended which can make your life a b
     doas apk --no-cache procs
     ```
 
-    Optionally, you can add `alias ps="procs"` (for `bash`) or `abbr ps "pros" (for `fish`)
+    Optionally, you can add `alias ps="procs"` (for `bash`) or `abbr ps "pros"` (for `fish`)
     to your shell configuration file.
 
     Some use cases:
