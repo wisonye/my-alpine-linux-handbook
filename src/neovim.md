@@ -24,7 +24,17 @@
 - Install `Neovim`
 
     ```bash
-    doas apk --no-cache add neovim neovim-doc py3-pynvim
+    doas apk --no-cache add neovim neovim-doc py3-pynvim xclip
+    ```
+
+    </br>
+
+    If you don't install `xclip`, then clipboard copy&paste won't work, you can
+    confirm that by running `:checkhealt` in `neovim`:
+
+    ```bash
+    ## Clipboard (optional)
+        - OK: Clipboard tool found: xclip
     ```
 
     </br>
