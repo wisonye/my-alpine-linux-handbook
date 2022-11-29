@@ -9,12 +9,6 @@ cannot connect to system bus
 
 </br>
 
-- Install `flatpak` if not yet
-
-    ```bash
-    doas apk --no-cache add flatpak
-    ```
-
 - Add the Flathub repository
 
     ```bash
@@ -55,4 +49,12 @@ cannot connect to system bus
 
     </br>
 
+
+- How to run
+
+    ```bash
+    dbus-run-session flatpak run com.brave.Browser
+    ```
+
+    </br>
 

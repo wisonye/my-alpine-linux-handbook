@@ -7,66 +7,43 @@ information, then you can install `Ungoogled Chromium`!!!
 
 </br>
 
-Plz make sure `dbus` service is running, otherwise, you will see the following
-error:
-
-```bash
-cannot connect to system bus
-```
-
-</br>
-
-- Install `flatpak` if not yet
-
-    ```bash
-    doas apk --no-cache add flatpak
-    ```
-
-- Add the Flathub repository
-
-    ```bash
-    doas flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    ```
-
-    Better to restart to make sure take affect.
-
-    </br>
-
-
 - Install `ungoogled-chromium`
 
 
     ```bash
-    doas flatpak install flathub-beta com.github.Eloston.UngoogledChromium
+    doas flatpak install flathub com.github.Eloston.UngoogledChromium
 
     # Looking for matches…
-    # Required runtime for com.github.Eloston.UngoogledChromium/x86_64/beta (runtime/org.freedesktop.Platform/x86_64/20.08) found in remote flathub
-    # Do you want to install it? [Y/n]: Y
-
-    # Info: runtime org.freedesktop.Platform branch 20.08 is end-of-life, with reason:
-    #    org.freedesktop.Platform 20.08 is no longer receiving fixes and security updates. Please update to a supported runtime version.
-    # Info: applications using this runtime:
-    #    com.github.Eloston.UngoogledChromium
-
-    # Info: runtime org.freedesktop.Platform.GL.default branch 20.08 is end-of-life, with reason:
-    #    org.freedesktop.Platform 20.08 is no longer receiving fixes and security updates. Please update to a supported runtime version.
-    # Info: applications using this runtime:
-    #    com.github.Eloston.UngoogledChromium
-
+    # Required runtime for com.github.Eloston.UngoogledChromium/x86_64/stable (runtime/org.freedesktop.Platform/x86_64/21.08) found in remote flathub
+    # Do you want to install it? [Y/n]:
+    # 
     # com.github.Eloston.UngoogledChromium permissions:
-    #     ipc wayland x11
-
-
-
-    #         ID                                               Branch            Op            Remote                  Download
-    #  1. [✓] org.freedesktop.Platform.GL.default              20.08             i             flathub                 105.8 MB / 106.4 MB
-    #  2. [✓] org.freedesktop.Platform.Locale                  20.08             i             flathub                 143.3 MB / 322.5 MB
-    #  3. [✓] org.freedesktop.Platform.openh264                2.0               i             flathub                   1.8 MB / 1.5 MB
-    #  4. [✓] org.freedesktop.Platform                         20.08             i             flathub                 292.7 MB / 270.4 MB
-    #  5. [✓] com.github.Eloston.UngoogledChromium             beta              i             flathub-beta             11.0 kB / 10.8 kB
-
+    #     ipc                    network                  cups                          pulseaudio        wayland        x11       devices       file access [1]
+    #     dbus access [2]        bus ownership [3]        system dbus access [4]
+    # 
+    #     [1] /run/.heim_org.h5l.kcm-socket, home
+    #     [2] com.canonical.AppMenu.Registrar, org.freedesktop.FileManager1, org.freedesktop.Notifications, org.freedesktop.ScreenSaver, org.freedesktop.secrets, org.gnome.SessionManager, org.kde.kwalletd5
+    #     [3] org.mpris.MediaPlayer2.chromium.*
+    #     [4] org.freedesktop.Avahi, org.freedesktop.UPower
+    # 
+    # 
+    #         ID                                                      Branch             Op            Remote             Download
+    #  1. [✓] com.github.Eloston.UngoogledChromium.Codecs             stable             i             flathub              1.1 MB / 1.1 MB
+    #  2. [✓] org.freedesktop.Platform.GL.default                     21.08              i             flathub            129.8 MB / 129.8 MB
+    #  3. [✓] org.freedesktop.Platform.Locale                         21.08              i             flathub             34.2 MB / 326.3 MB
+    #  4. [✓] org.freedesktop.Platform                                21.08              i             flathub            204.8 MB / 201.4 MB
+    #  5. [✓] com.github.Eloston.UngoogledChromium                    stable             i             flathub            127.7 MB / 134.7 MB
+    # 
     # Installation complete.
-
     ```
 
     </br>
+
+- How to run
+
+    ```bash
+    dbus-run-session flatpak com.github.Eloston.UngoogledChromium
+    ```
+
+    </br>
+

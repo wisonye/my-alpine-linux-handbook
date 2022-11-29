@@ -32,6 +32,7 @@
     - [Image Previewr](./image-previewer.md)
     - [Install `docker`](./install-docker.md)
     - [Install browser]()
+        - [Install flatpak](./install-flatpak.md)
         - [Install `Brave Browser`](./install-brave.md)
         - [Install `ungoogled-chromium`](./install-ungoogled-chromium.md)
         - [`vim` plugins](./chrome-vim-plugins.md)
