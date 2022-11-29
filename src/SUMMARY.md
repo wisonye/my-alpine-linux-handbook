@@ -31,7 +31,6 @@
     - [CLI File Browser](./cli-file-browser.md)
     - [Image Previewr](./image-previewer.md)
     - [Install `docker`](./install-docker.md)
-    - [Install `GTK` themes](./install-gtk-themes.md)
     - [Install browser]()
         - [Install `Brave Browser`](./install-brave.md)
         - [Install `Chrome`](./install-google-chrome.md)
