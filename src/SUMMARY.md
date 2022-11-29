@@ -31,6 +31,7 @@
     - [CLI File Browser](./cli-file-browser.md)
     - [Image Previewr](./image-previewer.md)
     - [Install `docker`](./install-docker.md)
+    - [DBus - Message bus](./install-dbus.md)
     - [Install browser]()
         - [Install flatpak](./install-flatpak.md)
         - [Install `Brave Browser`](./install-brave.md)
