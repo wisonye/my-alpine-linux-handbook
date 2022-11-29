@@ -3,8 +3,37 @@
 - Installation
 
     ```bash
-    sudo pacman -S docker
+    doas apk --no-cache add docker
+
+    # (1/15) Installing runc (1.1.4-r3)
+    # (2/15) Installing containerd (1.6.10-r0)
+    # (3/15) Installing containerd-openrc (1.6.10-r0)
+    # (4/15) Installing libmnl (1.0.5-r0)
+    # (5/15) Installing libnftnl (1.2.4-r0)
+    # (6/15) Installing iptables (1.8.8-r2)
+    # (7/15) Installing iptables-openrc (1.8.8-r2)
+    # (8/15) Installing ip6tables (1.8.8-r2)
+    # (9/15) Installing ip6tables-openrc (1.8.8-r2)
+    # (10/15) Installing tini-static (0.19.0-r1)
+    # (11/15) Installing docker-engine (20.10.21-r1)
+    # (12/15) Installing docker-openrc (20.10.21-r1)
+    # (13/15) Installing docker-cli (20.10.21-r1)
+    # (14/15) Installing docker (20.10.21-r1)
+    # Executing docker-20.10.21-r1.pre-install
+    # (15/15) Installing docker-fish-completion (20.10.21-r1)
+    # Executing busybox-1.35.0-r29.trigger
+    # OK: 2531 MiB in 409 packages
     ```
+
+    Connecting to the Docker daemon through its socket requires you to add yourself to the `docker` group.
+
+    ```bash
+    doas addgroup YOUR_USER_NAME_HERE docker
+    ```
+
+    Re-login to take affect.
+
+    </br>
 
     What components are installed be default?
     
@@ -15,86 +44,35 @@
 - Handle `docker` as a service
 
     - Query status
+
         ```bash
-        sudo systemctl status docker
+        doas service docker status
         ```
     - Start
+
         ```bash
-        sudo systemctl start docker
+        doas service docker start
         ```
     - Stop
+
         ```bash
-        sudo systemctl stop docker
+        doas service docker stop
         ```
 
     - Enable auto start
+
         ```bash
-        sudo systemct enable docker
+        doas rc-update add docker boot
         ```
 
     - Disable auto start
+
         ```bash
-        sudo systemct disable docker
+        doas rc-update del docker boot
         ```
 
-    Of course you can add the commands above to your shell configuration as an `alias`
-    or `abbreviation`. For example, **`fish`** abbreviation sample:
+        </br>
 
-    ```bash
-    abbr startdocker "sudo systemctl start docker"
-    abbr stopdocker "sudo systemctl stop docker"
-    ```
-
-</br>
-
-- Run `docker` client without `sudo`
-
-    The **`Docker`** daemon binds to a `Unix socket` instead of a TCP port. 
-    By default that `Unix socket` is owned by the user **`root`** and other 
-    users can only access it using **`sudo`**. The **`Docker`** daemon always 
-    runs as the **`root`** user.
-
-    That means you have run `sudo docker COMMAND` rather than `docker COMMAND`!
-
-    If you don’t want to preface the **`docker`** command with **`sudo`**, add your
-    linux account to **`docker`** group. When the **`Docker`** daemon starts, 
-    it creates a `Unix socket` accessible by members of the **`docker`** group.
-
-    </br>
-
-    By default, the **`docker`** group will be created during the installation:
-
-    ![docker-auto-create-group.png](./images/docker-auto-create-group.png)
-
-    You can confirm that by running the command below:
-
-    ```bash
-    cat /etc/group | grep docker
-    ``` 
-
-    </br>
-
-    If it doesn't exists, then create it by yourself:
-
-    ```bash
-    # Optional step!
-    sudo groupadd docker
-    ```
-
-    </br>
-
-    Now, add your linux account into the `docker` group:
-
-    ```bash
-    sudo usermod -aG docker $USER
-    ```
-
-    You need to re-login to take effect.
-
-    After that, run `docker info` (after running `docker` service) to test the permission,
-    should be ok already.
-
-</br>
 
 - Install `docker-compose`
 

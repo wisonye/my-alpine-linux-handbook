@@ -84,5 +84,12 @@ Best document [here](https://wiki.alpinelinux.org/wiki/OpenRC)
     rc-service <service> <start stop restart>
     ```
 
+    `service` and `rc-service` are the same:
+
+    ```bash
+    ls -lht /sbin/service
+    # lrwxrwxrwx    1 root  root  /sbin/service -> /sbin/rc-service*
+    ```
+
     </br>
 
