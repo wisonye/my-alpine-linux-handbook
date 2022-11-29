@@ -25,6 +25,23 @@
 
     </br>
 
+- Generate `~/.ssh/config` if not exists
+
+    If you will use some docker images that contain an older version of `git`,
+    then you better have the `IgnoreUnknown UseKeychain` settings, as older
+    `git` doesn't recognize the `UseKeyChain` option:
+
+    ```bash
+    Host *
+      IgnoreUnknown UseKeychain
+      AddKeysToAgent yes
+      UseKeychain yes
+      IdentityFile ~/.ssh/id_ed25519
+    ```
+
+    </br>
+
+
 - Install and config `git-delta`
 
     ```bash
