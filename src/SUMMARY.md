@@ -42,7 +42,6 @@
         - [Advanced keybinding](./advanced-keybinding.md)
         - [Switching keyboard](./switching-keyboard.md)
     - [`lookatme`](./lookatme.md)
-    - [About GPU](./about-gpu.md)
     - [Fix sound issue](./fix-sound-issue.md)
     - [Fix webcam issues](./fix-webcam-issue.md)
     - [Support chinese](./support-chinese.md)

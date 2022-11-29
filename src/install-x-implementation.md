@@ -126,8 +126,41 @@ More information from [here](https://en.wikipedia.org/wiki/X_Window_System)
 
     </br>
 
+- Identify your graphics card:
+
+    If you're running Alpine Linux in  `Paralles Desktop` then you should see
+    something like this:
+
+    ```bash
+    lspci -v | grep -A1 -e VGA -e 3D
+
+    # 01:00.0 VGA compatible controller: Red Hat, Inc. Virtio GPU (rev 01) (prog-if 00 [VGA controller])
+    #        Subsystem: Parallels, Inc. Device 0010
+    ```
+
+    </br>
+
+    If you're running Apline Linux in real Apple Hardware, then you should see
+    something like this:
+
+    ```bash
+    lspci -v | grep -A1 -e VGA -e 3D
+
+    # VGA compatible controller: Intel Corproation Crystal ell Integrated Grahpics Controller (rev 08) (prog-if 00 [VGA controller])
+    # Subsystem: Apple Inc. Device 0147
+
+    ```
+
+    So you know that's a GPU integrated inside Intel CPU and `Subsystem` show
+    you the specific model for you to find the driver
+
+    </br>
 
 - Fix GPU driver (you don't need this if running in VM)
+
+    [Here](https://wiki.archlinux.org/index.php/xorg) is the full list for all GPU brands.
+
+    </br>
 
     - Install driver for `Radeon Pro 570X (4GB VRAM)`
 
@@ -200,5 +233,17 @@ More information from [here](https://en.wikipedia.org/wiki/X_Window_System)
 
         </br>
 
-- Fix MacBookPro Intel integrated GPU
+- Test your video driver:
+
+    After that, you can run the utilities below to check your OpenGL ability:
+
+    ```
+    # Check the OpenGL version
+    glxinfo | grep "OpenGL version"
+
+    # Test the OpenGL render framerate
+    glxgears
+    ```
+
+    </br>
 
