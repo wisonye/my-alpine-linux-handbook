@@ -58,3 +58,10 @@ cannot connect to system bus
 
     </br>
 
+- How to install chrome extension
+
+    Watch [this](https://www.youtube.com/watch?v=zYBwOEfDJBM&t=85s)
+
+    </br>
+
+
