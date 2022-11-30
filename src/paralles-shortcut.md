@@ -1,7 +1,6 @@
 # Parallels Shortcuts
 
-![shortcut-1](./images/paralles-shotcut.png)
+![shortcut-1](./images/paralles-shortcut.png)
 
 </br>
 
-![shortcut-2](./images/paralles-shotcut2.png)
