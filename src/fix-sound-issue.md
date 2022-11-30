@@ -3,7 +3,7 @@
 - Install the packages below:
 
     ```bash
-    sudo pacman -Sy pulseaudio alsa-utils
+    doas apk --no-cache add pulseaudio alsa-utils
 
     # Reboot
     ```
@@ -24,34 +24,17 @@
 
 </br>
 
-- You should be able to control with your `volume up/down` key on your keyboard
-
-    If you installed `i3`, by default it has the volume keybindings like below:
-
-    ```bash
-    # ===========================================================================
-    # Audio and volume control
-    # ===========================================================================
-    # Use pactl to adjust volume in PulseAudio.
-    set $refresh_i3status killall -SIGUSR1 i3status
-    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-    bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-    ```
-
-    It should work out-of-the-box.
-
-</br>
-
 - Optionally, you can install **`pavucontrol`** GUI volume control app
 
     ```bash
-    sudo pacman -Sy pavucontrol
+    doas apk --no-cache add pavucontrol
     ```
 
     It looks like this:
 
 
-    ![pulse-audio-volume-control.png](./images/pulse-audio-volume-control.png)
+    ![pulse-audio-volume-control.png](./images/pavucontrol-volume.png)
+
+    </br>
+
 
