@@ -43,8 +43,5 @@
     - [Fix sound issue](./fix-sound-issue.md)
     - [Multiple Monitor](./multiple-monitor.md)
     - [`lookatme`](./lookatme.md)
-    - [Install communication tools]()
-        - [Install `zoom`](./install-zoom.md)
-        - [Install `slack`](./install-slack.md)
     - [About cleaning cache](./about-cleaning-cache.md)
     - [Firewall](./firewall.md)
