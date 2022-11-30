@@ -3,6 +3,7 @@
 - [Before Install]()
     - [Erase install media partition](./erase_install_media_partition.md)
     - [Prepare your live ISO USB](./prepare-iso-usb.md)
+    - [Parallels Shortcuts](./paralles-shortcut.md)
 - [Installing]()
     - [setup-alpine](./setup-alpine.md)
 - [After Install]()
