@@ -41,6 +41,7 @@
         - [`firenvim` plugins](./chrome-firenvim-plugins.md)
         - [Support chinese](./support-chinese.md)
     - [Fix sound issue](./fix-sound-issue.md)
+    - [GTK/QT Small font issue](./small-font-issue.md)
     - [Multiple Monitor](./multiple-monitor.md)
     - [`lookatme`](./lookatme.md)
     - [About cleaning cache](./about-cleaning-cache.md)
