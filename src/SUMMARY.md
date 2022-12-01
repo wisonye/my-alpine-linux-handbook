@@ -11,6 +11,7 @@
     - [Config `doas`](./config_doas.md)
     - [Package management](./package_management.md)
     - [How to shutdown and power off](./how_to_power_off.md)
+    - [Disable TTYs](./disable-ttys.md)
     - [Change default shell](./change-default-shell.md)
     - [Config `git`](./config-git.md)
     - [Recommended package to install](./recommended-package-to-install.md)
