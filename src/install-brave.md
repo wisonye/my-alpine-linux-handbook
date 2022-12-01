@@ -53,7 +53,10 @@ cannot connect to system bus
 - How to run
 
     ```bash
-    dbus-run-session flatpak --filesystem=~/Downloads run com.brave.Browser
+    dbus-run-session flatpak run \
+        --filesystem=~/Downloads \
+        --env=TZ=Pacific/Auckland \
+        run com.brave.Browser
     ```
 
     </br>
@@ -61,25 +64,6 @@ cannot connect to system bus
 - How to install chrome extension
 
     Watch [this](https://www.youtube.com/watch?v=zYBwOEfDJBM&t=85s)
-
-    </br>
-
-- About sandbox file access permissions
-
-    This is the tricky part, as `flatpak` runs app in sandbox by default. That
-    means the app itself cannot access the host file system.
-
-    If you want to import bookmark from a file or save the download file to
-    somewhere (on your host file system), then you have to give it the permission
-    like this:
-
-    ```bash
-    # Suppose that allow the app to access (read & write) to host `~/Downloads`
-    dbus-run-session flatpak --filesystem=~/Downloads run com.brave.Browser
-
-    # Suppose that allow the app to access (read only) to host `/tmp`
-    dbus-run-session flatpak --filesystem=/tmp:ro run com.brave.Browser
-    ```
 
     </br>
 
