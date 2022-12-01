@@ -20,6 +20,16 @@
 
     </br>
 
+- Install `xdg-utlis`
+
+    Some neovim plugins need to use `xdg-open` program, that's why you need to 
+    install:
+
+    ```bash
+    doas apk --no-cache add xdg-utils
+    ```
+
+    </br>
 
 - Install `Neovim`
 
