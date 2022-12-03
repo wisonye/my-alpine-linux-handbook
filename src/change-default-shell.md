@@ -18,7 +18,10 @@
 
     ```bash
     doas apk update
-    doas apk add --no-cache fish libuser
+
+    # If you don't install `fish-doc`, then you won't have internal command
+    # man pages (includes `--help` support)
+    doas apk add --no-cache fish fish-doc libuser
     ```
 
     </br>
