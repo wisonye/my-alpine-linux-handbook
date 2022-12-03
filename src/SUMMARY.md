@@ -49,4 +49,4 @@
     - [Firewall]()
         - [About iptable module](./about-iptable-module.md)
         - [Iptables](./iptables.md)
-        - [Alpine Wall (awal)](./firewall.md)
+        - [Setup iptables service](./setup-iptables.md)
