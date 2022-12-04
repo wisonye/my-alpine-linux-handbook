@@ -35,7 +35,7 @@ That's pretty easy, in the browser, click on the print icon on the right-top to 
 
 - My `bspwm` screenshot
 
-    ![bspwm.png](./src/images/bspwm.png)
+    ![bspwm.png](./src/images/alpine-bspwm.png)
 
     </br>
 
