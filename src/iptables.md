@@ -179,3 +179,81 @@ iptables --policy OUTPUT DROP
     </br>
 
 
+#### 5. Logging
+
+You do need to log all packets that doesn't match any rules you've already set,
+then you're able to figure out what you're missing, here is how to do that:
+
+```bash
+#
+# Log everything that doesn't match any rules above
+#
+iptables --append INPUT --jump LOG
+iptables --append OUTPUT --jump LOG
+```
+
+</br>
+
+After applying the above rules, make sure you start the `klogd` service, otherwise
+you won't see any packet log!!!
+
+```bash
+# Enable it if not yet
+doas rc-update add klogd boot
+
+# Start it if not yet
+doas service klogd restart
+```
+
+</br>
+
+Then run the following command to see the missing packets:
+
+```bash
+tail -f /var/log/messages
+```
+
+</br>
+
+For example, if you don't allow someone to `ping` you, then you should see the
+following logs:
+
+_Packets fail to come into your computer_
+
+
+```bash
+Dec  4 16:56:47 my-alpine-linux kern.warn kernel: [ 2727.719112] IN=eth0 OUT= MAC=00:1c:42:99:56:c8:a4:83:e7:47:9c:05:08:00 SRC=192.168.1.125 DST=192.168.1.133 LEN=84 TOS=0x00 PREC=0x00 TTL=64 ID=57688 PROTO=ICMP TYPE=8 CODE=0 ID=36356 SEQ=0
+Dec  4 16:56:48 my-alpine-linux kern.warn kernel: [ 2728.725955] IN=eth0 OUT= MAC=00:1c:42:99:56:c8:a4:83:e7:47:9c:05:08:00 SRC=192.168.1.125 DST=192.168.1.133 LEN=84 TOS=0x00 PREC=0x00 TTL=64 ID=50346 PROTO=ICMP TYPE=8 CODE=0 ID=36356 SEQ=1
+Dec  4 16:56:49 my-alpine-linux kern.warn kernel: [ 2729.726381] IN=eth0 OUT= MAC=00:1c:42:99:56:c8:a4:83:e7:47:9c:05:08:00 SRC=192.168.1.125 DST=192.168.1.133 LEN=84 TOS=0x00 PREC=0x00 TTL=64 ID=12020 PROTO=ICMP TYPE=8 CODE=0 ID=36356 SEQ=2
+```
+
+Another example, if you don't allow `Network Time Protocol (ntp 123/udp)`, then
+you should see the following logs:
+
+_Packets fail to go out NTP server_
+
+
+```bash
+Dec  4 16:55:58 my-alpine-linux kern.warn kernel: [ 2678.889280] IN= OUT=eth0 SRC=192.168.1.133 DST=162.159.200.123 LEN=76 TOS=0x00 PREC=0x00 TTL=64 ID=11820 DF PROTO=UDP SPT=40367 DPT=123 LEN=56
+Dec  4 16:55:59 my-alpine-linux kern.warn kernel: [ 2679.504496] IN= OUT=eth0 SRC=192.168.1.133 DST=130.217.74.63 LEN=76 TOS=0x00 PREC=0x00 TTL=64 ID=21699 DF PROTO=UDP SPT=43861 DPT=123 LEN=56
+Dec  4 16:56:01 my-alpine-linux kern.warn kernel: [ 2681.524643] IN= OUT=eth0 SRC=192.168.1.133 DST=162.159.200.1 LEN=76 TOS=0x00 PREC=0x00 TTL=64 ID=47881 DF PROTO=UDP SPT=53274 DPT=123 LEN=56
+```
+
+Btw, the `NTP` UDP packet is caused by `chrony` process (run by `chrony` user)
+
+```bash
+procs chrony
+
+# PID:▲   User │ TTY Threads TCP   VmRSS │ Command
+#              │                 [bytes] │
+# 2323  chrony │        1         1.125M │ /usr/sbin/chronyd -f /etc/chrony/chrony.conf
+```
+
+</br>
+
+If you have no idea about which protocol use which port, then you should find it
+in `/etc/services`.
+
+</br>
+
+
