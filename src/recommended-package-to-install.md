@@ -26,6 +26,112 @@ All the packages below are optional but recommended which can make your life a b
 
     </br>
 
+- `lfs` is a better option of `du`, written in `Rust`.
+
+    ```bash
+    doas apk --no-cache lfs
+    ```
+
+    </br>
+
+- `fzf` is a CLI fuzzy finder, the `hc` fish abbr based on it!!!
+
+    ```bash
+    doas apk --no-cache fzf fzf-doc
+    ```
+
+    </br>
+
+- `tealdeer` is a very fast implementation of tldr in Rust.
+
+    ```bash
+    cargo install tealdeer
+
+    # You have to run this before you can query any command help!!!
+    tealdear --update
+    ```
+
+    </br>
+
+    Sample usage:
+
+    ```bash
+
+    tldr iptables
+
+    # Program that allows configuration of tables, chains and rules provided by the Linux kernel firewall.
+    # More information: <https://www.netfilter.org/projects/iptables/>.
+
+    # View chains, rules, and packet/byte counters for the filter table:
+
+    #     sudo iptables -vnL
+
+    # Set chain policy rule:
+
+    #     sudo iptables -P chain rule
+
+    # Append rule to chain policy for IP:
+
+    #     sudo iptables -A chain -s ip -j rule
+
+    # Append rule to chain policy for IP considering protocol and port:
+
+    #     sudo iptables -A chain -s ip -p protocol --dport port -j rule
+
+    # Add a NAT rule to translate all traffic from the `192.168.0.0/24` subnet to the host's public IP:
+
+    #     sudo iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -j MASQUERADE
+
+    # Delete chain rule:
+
+    #     sudo iptables -D chain rule_line_number
+
+    # Save iptables configuration of a given table to a file:
+
+    #     sudo iptables-save -t tablename > path/to/iptables_file
+
+    # Restore iptables configuration from a file:
+
+    #     sudo iptables-restore < path/to/iptables_file
+    ```
+
+    </br>
+
+- `tokei` used to count code very quick, written in Rust.
+
+    ```bash
+    doas apk --no-cache tokei
+    ```
+
+    </br>
+
+    Sample usage:
+
+    ```bash
+    tokei --sort lines
+
+    # ===============================================================================
+    # Language            Files        Lines         Code     Comments       Blanks
+    # ===============================================================================
+    # TOML                    4          432          284           90           58
+    # Plain Text              1           92            0           80           12
+    # Dockerfile              1           57           15           33            9
+    # JSON                    1           23           23            0            0
+    # -------------------------------------------------------------------------------
+    # Rust                   16         1279         1021          119          139
+    # |- Markdown            13           78            0           72            6
+    # (Total)                           1357         1021          191          145
+    # -------------------------------------------------------------------------------
+    # Markdown                1          497            0          296          201
+    # |- BASH                 1          294          110          154           30
+    # (Total)                            791          110          450          231
+    # ===============================================================================
+    # Total                  24         2380         1343          618          419
+    # ===============================================================================
+    ```
+
+    </br>
+
 - `procs` is a replacement for `ps` written in `Rust`.
 
     ```bash
