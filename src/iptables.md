@@ -46,6 +46,15 @@ iptables --table mangle --flush
 iptables --table mangle --zero
 ```
 
+`--flush` and `--zero` act on all chains in all tables if you don't provide
+`-t/--table` option, so the following command has the same result with above
+commands:
+
+```bash
+iptables --flush
+iptables --zero
+```
+
 </br>
 
 ### 3. Terms and value meaning
@@ -106,9 +115,9 @@ The default `action` (aka: `target`) if there are no rules to be matched:
 #=============================================================================
 # Default policies: DROP
 #=============================================================================
-iptables --table filter --policy INPUT DROP
-iptables --table filter --policy FORWARD DROP
-iptables --table filter --policy OUTPUT DROP
+iptables --policy INPUT DROP
+iptables --policy FORWARD DROP
+iptables --policy OUTPUT DROP
 
 # iptables --table nat --policy PREROUTING  DROP
 # iptables --table nat --policy INPUT DROP
@@ -120,6 +129,9 @@ iptables --table filter --policy OUTPUT DROP
 # iptables --table mangle --policy OUTPUT DROP
 # iptables --table mangle --policy POSTROUTING DROP
 ```
+
+If you don't provide `-t/--table` option, by default `iptables` applies to the
+`filter` table.
 
 </br>
 
@@ -142,5 +154,30 @@ iptables --table filter --policy OUTPUT DROP
 
     </br>
 
+
+- Allow all incoming packets via `lo` NIC
+
+    ```bash
+    #
+    # Allow all incoming packets from `localhost`
+    #
+    iptables --append INPUT --in-interface $local_interface --jump ACCEPT
+    ```
+
+    </br>
+
+- Multi dest port case
+
+    When dealing with mulitple dest ports, you have to use:
+
+    `--match multiport --dports PORT1,PORT2`
+
+    Sample:
+
+    ```bash
+    iptables --append INPUT --protocol TCP --match multiport --dports 9099,8080 --jump ACCEPT
+    ```
+
+    </br>
 
 
