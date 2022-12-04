@@ -147,14 +147,15 @@ iptables --policy OUTPUT DROP
 # Vars
 #
 #
+set local_interface "lo"
 set local_network "192.168.1.0/24"
 set trusted_node "192.168.1.125"
 
 
 #
-# Allow local
+# Allow all incoming packets via `lo` NIC
 #
-#
+iptables --append INPUT --in-interface $local_interface --jump ACCEPT
 
 
 
@@ -169,9 +170,9 @@ iptables --append OUTPUT --match state --state NEW,ESTABLISHED,RELATED --jump AC
 
 
 #
-# ICMP outgoing (echo-request) and incoming (echo-reply) already `ACCEPT` by
-# the above `Special rules`. So we only need to set the ICMP incoming (echo-request)
-# when needed
+# ICMP outgoing (echo-request) and incoming (echo-reply) are already `ACCEPT`
+# by the above `Special rules`. So you only need to set the ICMP incoming
+# (echo-request) from someone `ping` you when needed
 #
 # Where to get the supported `icmp-type`:
 #
@@ -183,9 +184,26 @@ iptables --append INPUT --protocol ICMP --icmp-type echo-request --source $trust
 
 
 #
-# SSH
+# SSH (only allows trusted node)
 #
 iptables --append INPUT --protocol TCP --dport 22 --source $trusted_node --jump ACCEPT
+
+
+#
+# Firebase emulator
+#
+# ┌────────────────┬──────────────┬─────────────────────────────────┐
+# │ Authentication │ 0.0.0.0:9099 │ http://localhost:4000/auth      │
+# ├────────────────┼──────────────┼─────────────────────────────────┤
+# │ Firestore      │ 0.0.0.0:8080 │ http://localhost:4000/firestore │
+# └────────────────┴──────────────┴─────────────────────────────────┘
+#
+# You DO NOT need the following rules for local development!!!
+# You DO NOT need the following rules for local development!!!
+# You DO NOT need the following rules for local development!!!
+#
+# iptables --append INPUT --protocol TCP --match multiport --dports 9099,8080 --jump ACCEPT
+
 ```
 
 </br>

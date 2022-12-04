@@ -46,11 +46,12 @@ iptables --table mangle --flush
 iptables --table mangle --zero
 ```
 
-`--flush` and `--zero` act on all chains in all tables if you don't provide
-`-t/--table` option, so the following command has the same result with above
-commands:
+If you don't provide `-t/--table` option, by default `iptables` applies to the
+`filter` table.
+
 
 ```bash
+# Same with `--table filter`
 iptables --flush
 iptables --zero
 ```
@@ -129,9 +130,6 @@ iptables --policy OUTPUT DROP
 # iptables --table mangle --policy OUTPUT DROP
 # iptables --table mangle --policy POSTROUTING DROP
 ```
-
-If you don't provide `-t/--table` option, by default `iptables` applies to the
-`filter` table.
 
 </br>
 
