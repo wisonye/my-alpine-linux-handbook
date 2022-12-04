@@ -181,7 +181,7 @@ iptables --policy OUTPUT DROP
 
 #### 5. Logging
 
-You do need to log all packets that doesn't match any rules you've already set,
+You do need to log all packets that don't match any rules you've already set,
 then you're able to figure out what you're missing, here is how to do that:
 
 ```bash
@@ -194,8 +194,8 @@ iptables --append OUTPUT --jump LOG
 
 </br>
 
-After applying the above rules, make sure you start the `klogd` service, otherwise
-you won't see any packet log!!!
+After applying the above rules, make sure you start the `klogd` service,
+otherwise, you won't see any packet log!!!
 
 ```bash
 # Enable it if not yet

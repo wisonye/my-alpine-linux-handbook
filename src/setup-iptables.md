@@ -204,6 +204,16 @@ iptables --append INPUT --protocol TCP --dport 22 --source $trusted_node --jump 
 #
 # iptables --append INPUT --protocol TCP --match multiport --dports 9099,8080 --jump ACCEPT
 
+
+#
+# Log everything that doesn't match any rules above
+#
+# 1. You have to enable the `klogd` service
+#
+# 2. After that, run `tail -f /var/log/messages` to see the realtime log
+#
+iptables --append INPUT --jump LOG
+iptables --append OUTPUT --jump LOG
 ```
 
 </br>
