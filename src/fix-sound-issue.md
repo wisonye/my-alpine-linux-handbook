@@ -3,7 +3,7 @@
 - Install the packages below:
 
     ```bash
-    doas apk --no-cache add pulseaudio alsa-utils
+    doas apk --no-cache add pulseaudio pulseaudio-alas alsa-utils
 
     # Reboot
     ```
