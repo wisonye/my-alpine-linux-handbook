@@ -91,6 +91,37 @@
 
     </br>
 
+- Update the the given app
+
+    ```bash
+    # Make sure you enable the `dbus` service!!!
+    doas service dbus start
+
+    # Update the app
+    doas flatpak update com.brave.Browser
+
+    # Looking for updates…
+
+    # New com.brave.Browser permissions:
+    #     pcsc   file access [1]   dbus access [2]
+
+    #     [1] xdg-pictures, xdg-run/dconf, ~/.config/dconf:ro, ~/.config/kioslaverc
+    #     [2] ca.desrt.dconf
+
+
+    #         ID                                              Branch                  Op             Remote                  Download
+    #  1. [✓] org.freedesktop.Platform.GL.default             22.08                   u              flathub                 136.3 MB / 137.7 MB
+    #  2. [✓] org.freedesktop.Platform.GL.default             22.08-extra             i              flathub                   9.5 MB / 137.7 MB
+    #  3. [✓] org.freedesktop.Platform.Locale                 22.08                   u              flathub                   9.9 MB / 333.2 MB
+    #  4. [✓] org.freedesktop.Platform.openh264               2.2.0                   u              flathub                 616.9 kB / 944.3 kB
+    #  5. [✓] org.freedesktop.Platform                        22.08                   u              flathub                 137.1 MB / 214.5 MB
+    #  6. [✓] com.brave.Browser                               beta                    u              flathub-beta            154.3 MB / 154.8 MB
+
+    Changes complete.
+    ```
+
+    </br>
+
 - List configured remotes
 
     ```bash
